@@ -3,3 +3,33 @@
   hosts: test servers
   become: true
   
+- tasks:
+  - name: Install Apache2
+    package:
+      name: Apache2
+      state: present
+
+  - name: Install apache2-php5
+    package:
+      name: libapache2-mod-php
+      state: present
+
+  - name: Install php-cli
+    package:
+      name: php-cli
+      state: present
+
+  - name: Install php-gd
+    package:
+      name: php-gd
+      state: present
+
+  - name: Install php.mysql
+    package:
+      name: php.mysql
+      state: present
+
+  - name: Install mysqlserver
+    package:
+      name: mysql-server
+      state: present
