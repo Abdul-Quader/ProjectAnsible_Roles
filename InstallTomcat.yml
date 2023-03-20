@@ -5,7 +5,7 @@
   vars_files:
     Tomcat_Variables
 
-- tasks:
+  tasks:
   - name: Install java
     yum:
       name: java

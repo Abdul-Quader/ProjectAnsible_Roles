@@ -3,7 +3,7 @@
   hosts: all
   become: true
 
-- tasks:
+  tasks:
 #Installing nginx
   - name: Install nginx
     yum:

@@ -3,7 +3,7 @@
   hosts: test servers
   become: true
   
-- tasks:
+  tasks:
   - name: Install Apache2
     package:
       name: Apache2
