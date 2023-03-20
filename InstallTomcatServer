@@ -2,9 +2,8 @@
 - name: Installing Tomcat Server
   hosts: all
   become: true
-  vars:
-    tomcat_url: https://mirrors.estointernet.in/apache/tomcat/tomcat-10/v10.0.4/bin/apache-tomcat- 10.0.4.tar.gz
-    tomcat_package: apache-tomcat- 10.0.4.tar.gz
+  vars_files:
+    Tomcat_Variables
 
 - tasks:
   - name: Install java
