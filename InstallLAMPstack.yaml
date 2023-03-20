@@ -1,0 +1,5 @@
+---
+- name: Installing LAMP stack (Linux-Apache-MySQL-PHP)
+  hosts: test servers
+  become: true
+  
