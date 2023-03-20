@@ -1,0 +1,37 @@
+--- 
+- name: Installing MySQL Database
+  hosts: all
+  remote_user: root
+  vars_files:
+    Tomcat_Variables.yml
+
+  tasks:
+  - name: Install pip
+    apt:
+      name: python-pip
+      state: present
+
+  - name: Install libmysqlclient-dev
+    apt:
+      name: libmysqlclient-dev
+      state: present
+
+  - name: Install python mysqlb module
+    pip:
+      name: MySQL-python
+      state: present
+
+  - name: Create MySQL user AbdulQuader
+    mysql-user:
+      user: AbdulQuader
+      password: {{ password }}
+      priv: *.*:ALL
+      state: present
+
+  - name: Create database MonitorDB
+    mysql-db:
+      db: MonitorDB
+      state: present
+
+  - name: Create table register
+    command: mysql -u AbduQuader -p {{ password }} -e 'CREATE TABLE register (name VARCHAR(20), email VARCHAR(30));' MonitorDB
