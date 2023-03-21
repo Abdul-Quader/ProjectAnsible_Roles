@@ -1,4 +1,4 @@
---- 
+---
 - name: Installing MySQL Database
   hosts: all
   remote_user: root
@@ -22,14 +22,14 @@
       state: present
 
   - name: Create MySQL user AbdulQuader
-    mysql-user:
+    community.mysql.mysql_user:
       user: AbdulQuader
-      password: {{ password }}
-      priv: *.*:ALL
+      password: "{{ password }}"
+      priv: "*.*:ALL"
       state: present
 
   - name: Create database MonitorDB
-    mysql-db:
+    mysql_db:
       db: MonitorDB
       state: present
 
