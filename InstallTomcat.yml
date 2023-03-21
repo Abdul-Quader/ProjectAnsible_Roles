@@ -3,7 +3,7 @@
   hosts: all
   become: true
   vars_files:
-    Tomcat_Variables
+    pass_vault
 
   tasks:
   - name: Install java
