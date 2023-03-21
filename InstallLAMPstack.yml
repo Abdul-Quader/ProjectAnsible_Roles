@@ -6,30 +6,14 @@
   tasks:
   - name: Install Apache2
     package:
-      name: Apache2
+      name: "{{ item }}"
       state: present
+    loop:
+      - Apache2
+      - libapache2-mod-php
+      - php-cli
+      - php-gd
+      - php.mysql
+      - mysql-server
 
-  - name: Install apache2-php5
-    package:
-      name: libapache2-mod-php
-      state: present
-
-  - name: Install php-cli
-    package:
-      name: php-cli
-      state: present
-
-  - name: Install php-gd
-    package:
-      name: php-gd
-      state: present
-
-  - name: Install php.mysql
-    package:
-      name: php.mysql
-      state: present
-
-  - name: Install mysqlserver
-    package:
-      name: mysql-server
-      state: present
+  
