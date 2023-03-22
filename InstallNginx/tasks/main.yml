@@ -1,16 +1,13 @@
 ---
-- name: Install and start nginx
-  hosts: all
-  become: true
+# tasks file for InstallNginx
 
-  tasks:
-#Installing nginx
+  #Installing nginx
   - name: Install nginx
     yum:
       name: nginx
       state: latest
-      
-#Starting nginx
+              
+   #Starting nginx
   - name: Starting nginx
     service:
       name: nginx

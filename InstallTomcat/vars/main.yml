@@ -1,0 +1,4 @@
+---
+# vars file for InstallTomcat
+    tomcat_url: https://mirrors.estointernet.in/apache/tomcat/tomcat-10/v10.0.4/bin/apache-tomcat- 10.0.4.tar.gz
+    tomcat_package: apache-tomcat- 10.0.4.tar.gz

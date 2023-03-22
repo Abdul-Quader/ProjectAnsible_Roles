@@ -1,0 +1,12 @@
+---
+- name: Playbook for all installations
+  hosts: all
+  vars_files:
+    - pass_vault.yml
+    - Tomcat_Variables.yml
+
+  roles:
+    - InstallMySQL
+    - InstallNginx
+    - InstallTomcat
+    - LAMPstack

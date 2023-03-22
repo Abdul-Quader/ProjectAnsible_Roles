@@ -1,0 +1,32 @@
+---
+# tasks file for InstallMySQL
+
+    - name: Install pip
+      apt:
+        name: python-pip
+        state: present
+
+    - name: Install libmysqlclient-dev
+      apt:
+        name: libmysqlclient-dev
+        state: present
+
+    - name: Install python mysqlb module
+      pip:
+          name: MySQL-python
+          state: present
+
+    - name: Create MySQL user AbdulQuader
+      community.mysql.mysql_user:
+          user: AbdulQuader
+          password: "{{ password }}"
+          priv: "*.*:ALL"
+          state: present
+
+    - name: Create database MonitorDB
+      mysql_db:
+          db: MonitorDB
+          state: present
+
+    - name: Create table register
+      command: mysql -u AbduQuader -p {{ password }} -e 'CREATE TABLE register (name VARCHAR(20), email VARCHAR(30));' MonitorDB

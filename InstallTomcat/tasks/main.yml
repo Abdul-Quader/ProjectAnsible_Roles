@@ -1,0 +1,12 @@
+---
+# tasks file for InstallTomcat
+
+    - name: Install java
+      yum:
+        name: java
+        state: latest
+
+    - name: Download Tomcat package
+      get_url:
+        url: "{{ tomcat_url }}"
+        dest: /usr/local
