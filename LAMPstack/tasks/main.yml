@@ -1,14 +1,14 @@
 ---
 # tasks file for LAMPstack
 
-  - name: Install Apache2
+  - name: install LAMPstack
     package:
       name: "{{ item }}"
       state: present
-      loop:
-        - Apache2
+    loop:
+        - apache2
         - libapache2-mod-php
         - php-cli
         - php-gd
-        - php.mysql
+        - php-mysql
         - mysql-server
